@@ -1,27 +1,40 @@
-# Indexa
+# 📒 **Agenda de Contatos**  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Aplicação desenvolvida em **Angular** para gerenciar e exibir uma lista de contatos a partir de um arquivo JSON. A aplicação apresenta os nomes e números de telefone de forma dinâmica, permitindo uma interface simples e intuitiva.  
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📖 **Sobre o Projeto**  
 
-## Code scaffolding
+A **Agenda de Contatos** é um projeto que demonstra o uso de **Angular** para consumir dados de um arquivo JSON e renderizar informações em tela. Ele foi criado com o objetivo de praticar conceitos como:  
+- Estrutura de um projeto Angular.  
+- Consumo de dados estáticos em JSON.  
+- Interpolação de dados e uso de diretivas Angular para renderização de listas.  
+- Organização de componentes e estilos.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ **Tecnologias Utilizadas**  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular**: Framework principal para o desenvolvimento da aplicação.  
+- **TypeScript**: Linguagem utilizada para desenvolvimento no Angular.  
+- **HTML** e **CSS**: Para a estrutura e estilização da aplicação.  
+- **JSON**: Arquivo de dados estáticos que simula uma API.  
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📂 **Estrutura do Projeto**  
 
-## Running end-to-end tests
+- **/src/app**: Contém os componentes principais da aplicação.  
+  - **contact-list**: Componente que exibe a lista de contatos.  
+  - **services**: Serviço Angular responsável por consumir o arquivo JSON.  
+- **/assets/data/contacts.json**: Arquivo contendo a lista de contatos no formato JSON.  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Exemplo do arquivo `contacts.json`:  
+```json
+[
+  { "name": "João Silva", "phone": "(11) 99999-9999" },
+  { "name": "Maria Oliveira", "phone": "(21) 88888-8888" },
+  { "name": "Carlos Pereira", "phone": "(31) 77777-7777" }
+]
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
