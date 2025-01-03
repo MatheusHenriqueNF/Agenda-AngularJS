@@ -11,33 +11,54 @@
         <h1>Adicionar contato</h1>
     </header>
 
-    <form>
+    <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Digite o nome do contato">
+        <input type="text" id="nome" placeholder="Digite o nome do contato" formControlName="nome">
+        @if(contatoForm.get('nome')?.errors && contatoForm.get('nome')?.touched){
+            <div class="mensagem-erro">
+                Campo obrigatório
+            </div>
+        }
+        
 
         <label for="telefone">telefone</label>
-        <input type="text" id="telefone" placeholder="Digite o telefone do contato">
+        <input type="text" id="telefone" placeholder="Digite o telefone do contato" formControlName="telefone">
+        @if(contatoForm.get('telefone')?.errors && contatoForm.get('telefone')?.touched){
+            <div class="mensagem-erro">
+                Campo obrigatório
+            </div>
+        }
 
         <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Digite o email do contato">
+        <input type="email" id="email" placeholder="Digite o email do contato" formControlName="email">
+        @if(contatoForm.get('email')?.errors?.['required'] && contatoForm.get('email')?.touched){
+            <div class="mensagem-erro">
+                Campo obrigatório
+            </div>
+        }
+        @if(contatoForm.get('email')?.errors?.['email'] && contatoForm.get('email')?.touched){
+            <div class="mensagem-erro">
+                Formato de email inválido
+            </div>
+        }
 
         <app-separador></app-separador>
 
         <label for="aniversario">Aniversário</label>
-        <input type="date" id="aniversario" placeholder="Data de nascimento">
-
+        <input type="date" id="aniversario" placeholder="Data de nascimento" formControlName="aniversario">
+        
         <label for="redes">Redes sociais</label>
         <div class="input-container">
             <span class="span-http">http://</span>
-            <input type="url" id="redes" placeholder="Adicione a url da página">
+            <input type="url" id="redes" placeholder="Adicione a url da página" formControlName="redes">
         </div>
         
 
-        <textarea type="text" id="nome" placeholder="Coloque observações nesse espaço: Exemplo: 'Instrutora da academia 'Nova imagem', amiga da Júlia.' "></textarea>
+        <textarea type="text" id="nome" placeholder="Coloque observações nesse espaço: Exemplo: 'Instrutora da academia 'Nova imagem', amiga da Júlia.' " formControlName="observacoes"></textarea>
 
         <section class="botoes">
-            <button type="button" class="botao-cancelar">Cancelar</button>
-            <button type="submit" class="botao-salvar">Salvar contato</button>
+            <button (click)="cancelar()" type="button" class="botao-cancelar">Cancelar</button>
+            <button [disabled]="contatoForm.invalid" type="submit" [ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desabilitado'">Salvar contato</button>
         </section>
     </form>
 </app-container>
