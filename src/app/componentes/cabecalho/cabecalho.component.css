@@ -1,24 +1,24 @@
-.cabecalho{
+.cabecalho {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    border-bottom: 1px solid #3D8BFD;
+    border-bottom: 1px solid #0D6EFD;
     padding-bottom: 40px;
 }
 
-.cabecalho .titulo{
-    font-size: 26px;
-    font-weight: 400;
-    color: #3D8BFD;
-    font-style: normal;
-    line-height: 150%;
-    font-family: 'Zen Dots';
+.cabecalho .titulo {
+    color:  #0D6EFD;
     text-align: center;
+    font-family: 'Zen Dots';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
     margin: 0;
 }
 
-.cabecalho .titulo span{
-    color: #FD9843
+.cabecalho .titulo span {
+    color: #FD9843;
 }
